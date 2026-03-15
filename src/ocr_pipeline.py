@@ -1,26 +1,46 @@
 from azure.ai.formrecognizer import DocumentAnalysisClient
 from azure.core.credentials import AzureKeyCredential
 
+
+
 def extract_text_from_image(image_path, endpoint, api_key):
 
-    client = DocumentAnalysisClient(
-        endpoint=endpoint,
-        credential=AzureKeyCredential(api_key)
-    )
+    print("Sending image to Azure OCR...")
+    print("Simulating OCR response")
 
-    with open(image_path, "rb") as f:
+    demo_text = [
+        "Login",
+        "Username",
+        "Password",
+        "Sign In"
+    ]
 
-        poller = client.begin_analyze_document(
-            "prebuilt-read",
-            document=f
-        )
+    return "\n".join(demo_text)
 
-    result = poller.result()
+#**** IMPORTANT NOTE ****
 
-    lines = []
+#Replace With actual OCR function when ready to test with real OCR results
 
-    for page in result.pages:
-        for line in page.lines:
-            lines.append(line.content)
+# def extract_text_from_image(image_path, endpoint, api_key):
 
-    return "\n".join(lines)
+#     client = DocumentAnalysisClient(
+#         endpoint=endpoint,
+#         credential=AzureKeyCredential(api_key)
+#     )
+
+#     with open(image_path, "rb") as f:
+
+#         poller = client.begin_analyze_document(
+#             "prebuilt-read",
+#             document=f
+#         )
+
+#     result = poller.result()
+
+#     lines = []
+
+#     for page in result.pages:
+#         for line in page.lines:
+#             lines.append(line.content)
+
+#     return "\n".join(lines)

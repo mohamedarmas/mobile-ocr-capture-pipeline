@@ -2,9 +2,9 @@ import logging
 import os
 import tempfile
 
-from android_capture import capture_android_screen
-from ios_capture import capture_ios_screen
-from ocr_pipeline import extract_text_from_image
+from src.android_capture import capture_android_screen
+from src.ios_capture import capture_ios_screen
+from src.ocr_pipeline import extract_text_from_image
 
 logging.basicConfig(level=logging.INFO)
 

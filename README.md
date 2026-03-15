@@ -35,3 +35,9 @@ idevice_id -l
 Running the pipeline
 
 python examples/run_pipeline.py
+
+## Demo
+
+Android screenshot → OCR extraction pipeline.
+
+![Demo](docs/demo.gif)
